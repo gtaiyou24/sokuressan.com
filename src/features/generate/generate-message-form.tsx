@@ -16,6 +16,7 @@ import {Card, CardContent, CardFooter, CardHeader, CardTitle} from "@/components
 import { Textarea } from "@/components/ui/textarea"
 import {cn} from "@/lib/utils";
 import styles from "./styles.module.css";
+import {Loader2} from "lucide-react";
 
 
 export default function GenerateMessageForm() {
@@ -68,10 +69,7 @@ export default function GenerateMessageForm() {
     const clipCopy = () => {
         navigator.clipboard.writeText(generatedMessage ?? "");
         toast({
-            title: "コピーしました",
-            action: (
-                <ToastAction altText="閉じる">閉じる</ToastAction>
-            ),
+            description: "コピーしました"
         });
     }
 
@@ -140,8 +138,11 @@ export default function GenerateMessageForm() {
                     />
                     <FormError message={error} />
                     <div className="flex flex-col-reverse sm:flex-row gap-4 w-full">
-                        <Button variant="outline" onClick={() => reset()} disabled={isPending} className="w-full">リセット</Button>
-                        <Button type="submit" disabled={isPending} className="w-full">返信文を生成する</Button>
+                        <Button variant="secondary" onClick={() => reset()} disabled={isPending} className="w-full">リセット</Button>
+                        <Button type="submit" disabled={isPending} className="w-full">
+                            {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+                            返信文を生成する
+                        </Button>
                     </div>
                 </form>
             </Form>
