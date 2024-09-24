@@ -1,10 +1,11 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from "next/link";
+import {APP_NAME} from "@/lib/constants";
 
 export const metadata: Metadata = {
     title: 'プライバシーポリシー',
-    description: 'プライバシーポリシーです。個人情報の取り扱い、クッキーの使用、第三者サービスの利用などについて詳しく説明しています。',
+    description: `${APP_NAME}のプライバシーポリシーです。個人情報の取り扱い、クッキーの使用、第三者サービスの利用などについて詳しく説明しています。`,
 };
 
 const PrivacyPolicy = () => {
@@ -16,8 +17,7 @@ const PrivacyPolicy = () => {
 
             <section className="mb-8">
                 <h2 className="text-2xl font-semibold mb-4">1. はじめに</h2>
-                <p>Cook
-                    Cart（以下、「当サイト」）は、ユーザーの皆様のプライバシーを尊重し、個人情報の保護に努めています。本プライバシーポリシーでは、当サイトの利用に関連して収集する個人情報の取り扱いについて説明します。当サイトは日本の個人情報保護法を遵守し、適切に個人情報を管理いたします。</p>
+                <p>{APP_NAME}（以下、「当サイト」）は、ユーザーの皆様のプライバシーを尊重し、個人情報の保護に努めています。本プライバシーポリシーでは、当サイトの利用に関連して収集する個人情報の取り扱いについて説明します。当サイトは日本の個人情報保護法を遵守し、適切に個人情報を管理いたします。</p>
             </section>
 
             <section className="mb-8">
@@ -81,8 +81,7 @@ const PrivacyPolicy = () => {
                 <p>当サイトでは、Googleによるアクセス解析ツール「Google Analytics」を使用しています。Google
                     Analyticsはクッキーを使用し、個人を特定する情報を含まずにデータを収集します。収集されたデータは、当サイトの利用状況の分析と改善に役立てられます。</p>
                 <h3 className="text-xl font-semibold mt-4 mb-2">7.2 Amazonアソシエイト・プログラム</h3>
-                <p>当サイトは、amazon.co.jpを宣伝しリンクすることによって、サイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイト宣伝プログラムである「Amazonアソシエイト・プログラム」の参加者です。Amazonのアソシエイトとして、Cook
-                    Cartは適格販売により収入を得ています。</p>
+                <p>当サイトは、amazon.co.jpを宣伝しリンクすることによって、サイトが紹介料を獲得できる手段を提供することを目的に設定されたアフィリエイト宣伝プログラムである「Amazonアソシエイト・プログラム」の参加者です。Amazonのアソシエイトとして、{APP_NAME}は適格販売により収入を得ています。</p>
             </section>
 
             <section className="mb-8">

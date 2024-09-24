@@ -1,10 +1,11 @@
 import React from 'react';
 import { Metadata } from 'next';
 import Link from 'next/link';
+import {APP_NAME} from "@/lib/constants";
 
 export const metadata: Metadata = {
     title: '利用規約',
-    description: '利用規約ページです。サービスの利用条件、ユーザーの権利と義務、免責事項などを定めています。',
+    description: `${APP_NAME}の利用規約です。サービスの利用条件、ユーザーの権利と義務、免責事項などを定めています。`,
 };
 
 const TermsOfService = () => {
@@ -16,7 +17,7 @@ const TermsOfService = () => {
 
             <section className="mb-8">
                 <h2 className="text-2xl font-semibold mb-4">1. 適用</h2>
-                <p>本規約は、Cook Cart（以下「当サイト」といいます。）の利用に関する条件を、当サイトの利用者（以下「ユーザー」といいます。）と当サイトの運営者（以下「運営者」といいます。）との間で定めるものです。ユーザーは、本規約に同意の上、当サイトを利用するものとします。</p>
+                <p>本規約は、{APP_NAME}（以下「当サイト」といいます。）の利用に関する条件を、当サイトの利用者（以下「ユーザー」といいます。）と当サイトの運営者（以下「運営者」といいます。）との間で定めるものです。ユーザーは、本規約に同意の上、当サイトを利用するものとします。</p>
             </section>
 
             <section className="mb-8">

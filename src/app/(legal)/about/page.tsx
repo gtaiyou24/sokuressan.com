@@ -1,10 +1,11 @@
 import React from 'react';
 import Link from "next/link";
 import {Metadata} from "next";
+import {APP_NAME} from "@/lib/constants";
 
 export const metadata: Metadata = {
     title: '運営社情報',
-    description: '運営社情報のページです。運営者の詳細について記載しています。',
+    description: `${APP_NAME}の運営者情報です。運営者の詳細について記載しています。`,
 };
 
 const About = () => {
@@ -15,7 +16,7 @@ const About = () => {
             <section className="mb-8">
                 <h2 className="text-2xl font-semibold mb-4">運営者</h2>
                 <p>
-                    Cook Cart（以下、「当サイト」）は、個人運営のサービスです。当サイトは、ユーザーの皆様に安心してご利用いただけるよう、個人情報の保護に努めています。
+                    {APP_NAME}（以下、「当サイト」）は、個人運営のサービスです。当サイトは、ユーザーの皆様に安心してご利用いただけるよう、個人情報の保護に努めています。
                 </p>
                 <div className="mt-4">
                     <p><strong>氏名：</strong> 田村 大耀</p>
@@ -36,14 +37,14 @@ const About = () => {
             <section className="mb-8">
                 <h2 className="text-2xl font-semibold mb-4">サービス概要</h2>
                 <p>
-                    Cook Cartは、自炊する人のためのレシピからネットスーパーの食材を買うサービスです。
+                    {APP_NAME}は、自炊する人のためのレシピからネットスーパーの食材を買うサービスです。
                 </p>
             </section>
 
             <section className="mb-8">
                 <h2 className="text-2xl font-semibold mb-4">お問い合わせ</h2>
                 <p>
-                    Cook Cartに関するお問い合わせは、以下の方法でご連絡ください。
+                    {APP_NAME}に関するお問い合わせは、以下の方法でご連絡ください。
                 </p>
                 <p className="mt-2">
                     <strong>Xダイレクトメッセージ：</strong>
@@ -71,7 +72,7 @@ const About = () => {
             <section className="mb-8">
                 <h2 className="text-2xl font-semibold mb-4">プライバシーポリシー</h2>
                 <p>
-                    Cook Cartは、ユーザーの皆様のプライバシーを尊重し、個人情報の保護に努めています。
+                    {APP_NAME}は、ユーザーの皆様のプライバシーを尊重し、個人情報の保護に努めています。
                     本プライバシーポリシーでは、当サイトの利用に関連して収集する個人情報の取り扱いについて説明します。
                     当サイトは日本の個人情報保護法を遵守し、適切に個人情報を管理いたします。
                 </p>
