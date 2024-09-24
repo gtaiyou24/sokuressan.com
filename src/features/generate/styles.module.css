@@ -1,3 +1,8 @@
 .text {
     white-space: pre-wrap;
 }
+
+.annotation > li {
+    padding-left: 1em;
+    text-indent: -1em;
+}

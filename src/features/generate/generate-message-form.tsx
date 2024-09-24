@@ -99,7 +99,7 @@ export default function GenerateMessageForm() {
                                             field.onBlur();
                                             form.setValue('message', e.target.value);
                                         }}
-                                        placeholder="相手のメッセージを入力してください。"
+                                        placeholder="田村様。お世話になっております。〇〇です。面接日程ですが、以下の日程ですといかがでしょうか。..."
                                         className="w-full rounded-md border shadow-sm focus:border-black focus:ring-black p-4"
                                     />
                                 </FormControl>
@@ -138,6 +138,12 @@ export default function GenerateMessageForm() {
                         )}
                     />
                     <FormError message={error} />
+
+                    <ul className={cn(styles.annotation, "text-sm text-left list-inside list-none leading-tight tracking-tight")}>
+                        <li>※返信内容と異なる返信文が生成されることがあるため、生成された返信文の内容を必ずご確認ください。</li>
+                        <li>※当サイトでは、入力されたメッセージや返信内容、生成された返信文を保存しておりません。</li>
+                    </ul>
+
                     <div className="flex flex-col-reverse sm:flex-row gap-4 w-full">
                         <Button variant="secondary" onClick={() => reset()} disabled={isPending} className="w-full font-bold">
                             リセット
