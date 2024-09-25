@@ -5,6 +5,7 @@ import Provider from "@/components/provider";
 import {Toaster} from "@/components/ui/toaster";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
+import {APP_NAME, BASE_URL} from "@/lib/constants";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -16,19 +17,17 @@ const geistMono = localFont({
   variable: "--font-geist-mono",
   weight: "100 900",
 });
-const appName = "即レスくん";
-const baseURL = process.env.NODE_ENV === "production" ? 'https://sokures.com' : 'http://localhost:3000';
 
 export const metadata: Metadata = {
-  metadataBase: new URL(baseURL),
+  metadataBase: new URL(BASE_URL),
   title: {
-    default: `${appName} | メッセージの返信文を生成する AI`,
-    template: `%s | ${appName}`
+    default: `${APP_NAME} | メッセージの返信文を生成する AI`,
+    template: `%s | ${APP_NAME}`
   },
-  description: `${appName}はメッセージの返信文を生成する AI です。ビジネスメールや友達とのやり取りの返信文を考えて出力してくれます。`,
-  applicationName: appName,
+  description: `${APP_NAME}はメッセージの返信文を生成する AI です。ビジネスメールや友達とのやり取りの返信文を考えて出力してくれます。`,
+  applicationName: APP_NAME,
   alternates: {
-    canonical: baseURL
+    canonical: BASE_URL
   },
   icons: {
     apple: [
