@@ -6,6 +6,7 @@ import {Toaster} from "@/components/ui/toaster";
 import Footer from "@/components/layout/footer";
 import Header from "@/components/layout/header";
 import {APP_NAME, BASE_URL} from "@/lib/constants";
+import GoogleAnalytics from "@/components/layout/google/google-analytics";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -69,6 +70,7 @@ export default function RootLayout({
       <head>
         <meta httpEquiv="content-language" content="ja" />
         <meta name="google" content="notranslate" />
+        <GoogleAnalytics />
       </head>
       <body className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col max-w-5xl mx-auto items-center justify-center py-2 min-h-screen`}>
         <Provider>
