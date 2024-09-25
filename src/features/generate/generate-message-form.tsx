@@ -76,13 +76,13 @@ export default function GenerateMessageForm() {
     return (
         <div className="w-full">
             <Form {...form}>
-                <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-8 mb-8">
+                <form onSubmit={form.handleSubmit(onSubmit)} className="grid gap-4 mb-8">
                     <FormField
                         control={form.control}
                         name="message"
                         render={({ field }) => (
                             <FormItem className="grid gap-2">
-                                <FormLabel htmlFor="message" className="flex gap-2 items-center">
+                                <FormLabel htmlFor="message" className="flex space-x-2 items-center">
                                     <Badge>1</Badge>
                                     <p className="text-left text-lg">
                                         相手のメッセージを入力
@@ -92,7 +92,7 @@ export default function GenerateMessageForm() {
                                     <Textarea
                                         {...field}
                                         id="message"
-                                        rows={4}
+                                        rows={8}
                                         disabled={isPending}
                                         onBlur={(e) => {
                                             field.onBlur();
@@ -112,7 +112,7 @@ export default function GenerateMessageForm() {
                         name="reply"
                         render={({ field }) => (
                             <FormItem className="grid gap-2">
-                                <FormLabel htmlFor="message" className="flex gap-2 items-center">
+                                <FormLabel htmlFor="message" className="flex space-x-2 items-center">
                                     <Badge>2</Badge>
                                     <p className="text-left text-lg">
                                         返信内容を入力
@@ -143,7 +143,7 @@ export default function GenerateMessageForm() {
                         <li>※当サイトでは、入力されたメッセージや返信内容、生成された返信文を保存しておりません。</li>
                     </ul>
 
-                    <div className="flex flex-col-reverse sm:flex-row gap-4 w-full">
+                    <div className="flex flex-col-reverse md:flex-row gap-4">
                         <Button variant="secondary" onClick={() => reset()} disabled={isPending} className="w-full font-bold">
                             リセット
                         </Button>
@@ -161,7 +161,7 @@ export default function GenerateMessageForm() {
                         <CardTitle className="text-left">生成された返信文</CardTitle>
                     </CardHeader>
                     <CardContent>
-                        <p className={cn(styles.text, "leading-tight tracking-tight")}>
+                        <p className={cn(styles.wrap, "leading-tight tracking-tight")}>
                             {generatedMessage}
                         </p>
                     </CardContent>
