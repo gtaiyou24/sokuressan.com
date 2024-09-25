@@ -8,7 +8,7 @@ import {ThemeProvider} from "next-themes";
 export default function Provider({ children }: { children: ReactNode }) {
     const queryClient = new QueryClient();
     return (
-        <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
+        <ThemeProvider attribute="class" defaultTheme="light" enableSystem>
             <TooltipProvider>
                 <QueryClientProvider client={queryClient}>
                     {children}

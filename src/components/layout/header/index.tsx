@@ -13,7 +13,7 @@ export default function Header() {
                 </h1>
             </Link>
 
-            <ThemeToggle />
+            {/*<ThemeToggle />*/}
         </header>
     );
 }

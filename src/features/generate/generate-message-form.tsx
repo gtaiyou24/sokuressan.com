@@ -99,7 +99,7 @@ export default function GenerateMessageForm() {
                                             field.onBlur();
                                             form.setValue('message', e.target.value);
                                         }}
-                                        placeholder="田村様。お世話になっております。〇〇です。面接日程ですが、以下の日程ですといかがでしょうか。..."
+                                        placeholder="山田様。お世話になっております。〇〇です。面接日程ですが、以下の日程ですといかがでしょうか。..."
                                         className="w-full rounded-md border shadow-sm focus:border-black focus:ring-black p-4"
                                     />
                                 </FormControl>
