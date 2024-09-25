@@ -1,7 +1,6 @@
 import {APP_NAME} from "@/lib/constants";
 import Link from "next/link";
 import Logo from "@/components/logo";
-import ThemeToggle from "@/components/layout/header/theme-toggle";
 
 export default function Header() {
     return (
