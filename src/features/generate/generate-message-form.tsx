@@ -16,7 +16,6 @@ import {Card, CardContent, CardFooter, CardHeader, CardTitle} from "@/components
 import { Textarea } from "@/components/ui/textarea"
 import {cn} from "@/lib/utils";
 import styles from "./styles.module.css";
-import {Loader2} from "lucide-react";
 import Loading from "@/components/loading";
 
 

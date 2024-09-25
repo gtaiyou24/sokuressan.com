@@ -12,7 +12,7 @@ import {
 import {LaptopMinimal} from "lucide-react";
 
 
-export default function ThemeToggle({}: {}) {
+export default function ThemeToggle() {
     const { setTheme } = useTheme();
     return (
         <DropdownMenu>
