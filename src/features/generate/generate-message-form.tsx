@@ -65,7 +65,7 @@ export default function GenerateMessageForm() {
     const reset = useCallback(() => {
         form.reset();
         setGeneratedMessage("");
-    }, [form, generatedMessage]);
+    }, [form]);
     const clipCopy = () => {
         navigator.clipboard.writeText(generatedMessage ?? "");
         toast({
