@@ -66,11 +66,23 @@ export default function GenerateMessageForm() {
         form.reset();
         setGeneratedMessage("");
     }, [form]);
+    const close = useCallback(() => {
+        setGeneratedMessage("");
+    }, [generatedMessage]);
     const clipCopy = () => {
-        navigator.clipboard.writeText(generatedMessage ?? "");
-        toast({
-            description: "コピーしました"
-        });
+        if (!navigator.clipboard) {
+            toast({
+                variant: "destructive",
+                description: "お使いのブラウザではコピーできません。",
+                action: <ToastAction altText="閉じる">閉じる</ToastAction>,
+            });
+        }
+        if (generatedMessage) {
+            navigator.clipboard.writeText(`${generatedMessage}`);
+            toast({
+                description: "コピーしました"
+            });
+        }
     }
 
     return (
@@ -98,7 +110,7 @@ export default function GenerateMessageForm() {
                                             field.onBlur();
                                             form.setValue('message', e.target.value);
                                         }}
-                                        placeholder="山田様。お世話になっております。〇〇です。面接日程ですが、以下の日程ですといかがでしょうか。..."
+                                        placeholder="例) 田村様。お世話になっております。山田です。面接日程ですが、以下の日程ですといかがでしょうか。..."
                                         className="w-full rounded-md border shadow-sm focus:border-black focus:ring-black p-4"
                                     />
                                 </FormControl>
@@ -139,8 +151,8 @@ export default function GenerateMessageForm() {
                     <FormError message={error} />
 
                     <ul className={cn(styles.annotation, "text-sm text-left list-inside list-none leading-tight tracking-tight")}>
-                        <li>※返信内容と異なる返信文が生成されることがあるため、生成された返信文の内容を必ずご確認ください。</li>
-                        <li>※当サイトでは、入力されたメッセージや返信内容、生成された返信文を保存しておりません。</li>
+                        <li>※ 返信内容と異なる返信文が生成されることがあるため、生成された返信文の内容を必ずご確認ください。</li>
+                        <li>※ 当サイトでは、入力されたメッセージや返信内容、生成された返信文を保存しておりません。</li>
                     </ul>
 
                     <div className="flex flex-col-reverse md:flex-row gap-4">
@@ -166,7 +178,7 @@ export default function GenerateMessageForm() {
                         </p>
                     </CardContent>
                     <CardFooter className="flex justify-between">
-                        <Button onClick={() => reset()} variant="outline">閉じる</Button>
+                        <Button onClick={close} variant="outline">閉じる</Button>
                         <Button onClick={clipCopy}>コピー</Button>
                     </CardFooter>
                 </Card>
