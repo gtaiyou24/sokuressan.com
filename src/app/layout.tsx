@@ -67,8 +67,8 @@ export const metadata: Metadata = {
     type: 'website',
   },
   twitter: {
-    card: 'summary_large_image',
-    creator: 'tm_taiyo',
+    card: 'summary',
+    creator: '@tm_taiyo',
     site: BASE_URL,
     images: {
       url: `${BASE_URL}/logo-light.png`,
