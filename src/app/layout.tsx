@@ -65,6 +65,13 @@ export const metadata: Metadata = {
     url: BASE_URL,
     locale: 'ja_JP',
     type: 'website',
+    images: [
+      {
+        url: `${BASE_URL}/logo-light.png`,
+        alt: APP_NAME,
+        secureUrl: `${BASE_URL}/logo-light.png`,
+      }
+    ]
   },
   twitter: {
     card: 'summary',
