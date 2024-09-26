@@ -58,6 +58,24 @@ export const metadata: Metadata = {
       },
     ]
   },
+  openGraph: {
+    siteName: APP_NAME,
+    title: `${APP_NAME} | メッセージの返信文を生成する AI`,
+    description: `${APP_NAME}はメッセージの返信文を生成する AI です。ビジネスメールや友達とのやり取りの返信文を考えて出力してくれます。`,
+    url: BASE_URL,
+    locale: 'ja_JP',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    creator: 'tm_taiyo',
+    site: BASE_URL,
+    images: {
+      url: `${BASE_URL}/logo-light.png`,
+      alt: APP_NAME,
+      secureUrl: `${BASE_URL}/logo-light.png`,
+    }
+  }
 };
 
 export default function RootLayout({
